@@ -177,6 +177,8 @@ set(models
 	typhoon_h480_ctrlalloc
 	uuv_bluerov2_heavy
 	uuv_hippocampus
+	Hex
+	iris_ouster_lidar
 )
 
 set(worlds
@@ -189,6 +191,7 @@ set(worlds
 	warehouse
 	windy
 	yosemite
+	Hex
 )
 
 set(all_posix_vmd_make_targets)

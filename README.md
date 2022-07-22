@@ -1,3 +1,21 @@
+# PX4 stack fork for Aerial Additive Manufacturing
+
+This is my fork of the PX4 autopilot stack, mainly for simulation-based testing of aerial 3D printing with a custom drone.
+
+## Setup instructions
+Clone this repo in '~/catkin_ws/src':
+'''
+cd ~/catkin_ws/src
+git clone https://github.com/lachie-aerialrobotics/PX4-Autopilot.git
+'''
+Get all the submodules:
+'''
+git submodule update --init --recursive
+'''
+Set a git tag so PX4 knows the software version:
+git tag -a v<PX4 version>-<custom version>
+'''
+(For example: 'git tag -a v1.9.0-MyVersion')
 # PX4 Drone Autopilot
 
 [![Releases](https://img.shields.io/github/release/PX4/PX4-Autopilot.svg)](https://github.com/PX4/PX4-Autopilot/releases) [![DOI](https://zenodo.org/badge/22634/PX4/PX4-Autopilot.svg)](https://zenodo.org/badge/latestdoi/22634/PX4/PX4-Autopilot)

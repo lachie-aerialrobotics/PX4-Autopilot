@@ -1,42 +1,51 @@
-# #!/bin/sh
-# #
-# # @name Generic Hexarotor coaxial geometry
-# #
-# # @type Hexarotor Coaxial
-# # @class Copter
-# #
-# # @output MAIN1 front right top, CW; angle:60; direction:CW
-# # @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
-# # @output MAIN3 back top, CW; angle:180; direction:CW
-# # @output MAIN4 back bottom, CCW; angle:180; direction:CCW
-# # @output MAIN5 front left top, CW; angle:-60; direction:CW
-# # @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
-# #
-# # @output AUX1 feed-through of RC AUX1 channel
-# # @output AUX2 feed-through of RC AUX2 channel
-# # @output AUX3 feed-through of RC AUX3 channel
-# #
-# # @maintainer Lorenz Meier <lorenz@px4.io>
-# #
-# # @board bitcraze_crazyflie exclude
-# #
-
-# . ${R}etc/init.d/rc.mc_defaults
-
-# set MIXER hexa_cox
-
-# # Need to set all 8 channels
-# set PWM_OUT 12345678
-
-
-#------------------------------------------------------------------------------------
-# @name 3DR Iris Quadrotor SITL
+#!/bin/sh
 #
-# @type Quadrotor Wide
+# @name Generic Hexarotor coaxial geometry
 #
-# @maintainer Julian Oes <julian@oes.ch>
+# @type Hexarotor Coaxial
+# @class Copter
+#
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+#
+# @output AUX1 feed-through of RC AUX1 channel
+# @output AUX2 feed-through of RC AUX2 channel
+# @output AUX3 feed-through of RC AUX3 channel
+#
+# @maintainer Lorenz Meier <lorenz@px4.io>
+#
+# @board bitcraze_crazyflie exclude
 #
 
 . ${R}etc/init.d/rc.mc_defaults
 
-set MIXER quad_w
+param set-default MC_PITCHRATE_K 1.8500
+param set-default MC_PITCHRATE_I 0.250
+param set-default MC_PITCHRATE_D 0.0004
+
+param set-default MC_ROLLRATE_K 1.8500
+param set-default MC_ROLLRATE_I 0.250
+param set-default MC_ROLLRATE_D 0.0004
+
+param set-default MC_YAWRATE_K 0.55
+param set-default MC_YAWRATE_I 0.04
+
+param set-default MC_PITCH_P 5.50
+param set-default MC_ROLL_P 5.50
+param set-default MC_YAW_P 3.70
+
+param set-default MPC_XY_VEL_P_ACC 1.40
+param set-default MPC_XY_VEL_I_ACC 0.600
+param set-default MPC_XY_VEL_D_ACC 0.400
+
+param set-default MPC_TILTMAX_AIR 20.0
+
+param set-default BAT1_N_CELLS 6
+
+set MIXER hexa_cox
+
+set PWM_OUT 12345678

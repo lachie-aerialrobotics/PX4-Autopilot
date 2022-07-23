@@ -4,25 +4,25 @@ This is my fork of the PX4 autopilot stack, mainly for simulation-based testing 
 
 ## Setup instructions
 Clone this repo in '~/catkin_ws/src':
-'''
+
 cd ~/catkin_ws/src
 git clone https://github.com/lachie-aerialrobotics/PX4-Autopilot.git
-'''
+```
 Get all the submodules:
-'''
+```
 git submodule update --init --recursive
-'''
+```
 Set a git tag:
 git tag -a v<PX4 version>-<custom version>
-'''
+```
 (For example: 'git tag -a v1.9.0-MyVersion')
 
 To test flying the hexacopter, first update any changes to the .sdf:
-'''
+```
 cd PX4-Autopilot/Tools/sitl_gazebo/models/Hex
 erb Hex.sdf.erb > Hex.sdf
-'''
-Then run 'make px4_sitl gazebo_Hex' in the PX4_Autopilot directory
+```
+Then run `make px4_sitl gazebo_Hex` in the PX4_Autopilot directory
 
 
 # PX4 Drone Autopilot

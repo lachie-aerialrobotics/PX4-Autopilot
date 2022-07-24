@@ -81,4 +81,5 @@ px4_add_romfs_files(
 	6012_typhoon_h480_ctrlalloc.post
 	4321_Hex
 	4322_iris_ouster_lidar
+	4323_Hex_delta
 )

@@ -178,6 +178,7 @@ set(models
 	uuv_bluerov2_heavy
 	uuv_hippocampus
 	Hex
+	Hex_delta
 	iris_ouster_lidar
 )
 

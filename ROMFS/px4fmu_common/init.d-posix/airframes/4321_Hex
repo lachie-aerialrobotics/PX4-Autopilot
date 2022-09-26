@@ -49,8 +49,8 @@ param set-default MPC_Z_VEL_P_ACC 8.500
 param set-default MPC_Z_VEL_I_ACC 1.550
 param set-default MPC_Z_VEL_D_ACC 0.350
 
-param set-default MPC_XY_P = 1.5
-param set-default MPC_Z_P = 1.5
+param set-default MPC_XY_P 1.5
+param set-default MPC_Z_P 1.5
 
 param set-default MPC_TILTMAX_AIR 20.0
 param set-default MC_YAWRATE_MAX 60.0

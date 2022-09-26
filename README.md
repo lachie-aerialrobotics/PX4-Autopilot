@@ -18,6 +18,18 @@ git tag -a v<PX4 version>-<custom version>
 ```
 (For example: `git tag -a v1.9.0-MyVersion`)
 
+# Flash firmware
+
+A number of the outputs in 'mavlink_main.cpp' have been supressed to allow 300Hz streaming of imu data
+
+To flash onto a Pixhawk 4, plug in via USB and run:
+```
+make px4_fmu-v5_default upload
+```
+
+
+# Gazebo
+
 To test flying the hexacopter, first update any changes to the .sdf:
 ```
 cd PX4-Autopilot/Tools/sitl_gazebo/models/Hex

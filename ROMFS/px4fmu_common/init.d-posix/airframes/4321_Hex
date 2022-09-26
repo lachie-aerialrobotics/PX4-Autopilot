@@ -28,29 +28,29 @@ param set-default SYS_AUTOCONFIG 1
 param set-default MAV_TYPE 13
 
 param set-default MC_PITCHRATE_K 1.000
-param set-default MC_PITCHRATE_I 0.0068
-param set-default MC_PITCHRATE_D 0.35
+param set-default MC_PITCHRATE_I 0.30476
+param set-default MC_PITCHRATE_D 0.00497
 
 param set-default MC_ROLLRATE_K 1.000
-param set-default MC_ROLLRATE_I 0.0064
-param set-default MC_ROLLRATE_D 0.35
+param set-default MC_ROLLRATE_I 0.31657
+param set-default MC_ROLLRATE_D 0.0058
 
 param set-default MC_YAWRATE_K 1.000
-param set-default MC_YAWRATE_I 0.1
+param set-default MC_YAWRATE_I 0.18608
 
-param set-default MC_PITCH_P 3.80
-param set-default MC_ROLL_P 3.80
-param set-default MC_YAW_P 4.59
+param set-default MC_PITCH_P 4.19108
+param set-default MC_ROLL_P 4.06986
+param set-default MC_YAW_P 4.87088
 
-param set-default MPC_XY_VEL_P_ACC 2.1
-param set-default MPC_XY_VEL_I_ACC 0.8
+param set-default MPC_XY_VEL_P_ACC 5.0
+param set-default MPC_XY_VEL_I_ACC 0.6
 param set-default MPC_XY_VEL_D_ACC 0.25
-param set-default MPC_Z_VEL_P_ACC 8.500
-param set-default MPC_Z_VEL_I_ACC 1.550
-param set-default MPC_Z_VEL_D_ACC 0.350
+param set-default MPC_Z_VEL_P_ACC 4.0
+param set-default MPC_Z_VEL_I_ACC 2.0
+param set-default MPC_Z_VEL_D_ACC 0.0
 
-param set-default MPC_XY_P 1.5
-param set-default MPC_Z_P 1.5
+param set-default MPC_XY_P 2.0
+param set-default MPC_Z_P 2.0
 
 param set-default MPC_TILTMAX_AIR 20.0
 param set-default MC_YAWRATE_MAX 60.0

@@ -554,6 +554,8 @@ Mavlink::mavlink_open_uart(const int baud, const char *uart_name, const FLOW_CON
 
 	case 1000000: speed = B1000000; break;
 
+	case 3000000: speed = B3000000; break; //special fudge - might not work lol
+
 #ifdef B1500000
 
 	case 1500000: speed = B1500000; break;
@@ -564,10 +566,10 @@ Mavlink::mavlink_open_uart(const int baud, const char *uart_name, const FLOW_CON
 	case 2000000: speed = B2000000; break;
 #endif
 
-#ifdef B3000000
+// #ifdef B3000000
 
-	case 3000000: speed = B3000000; break;
-#endif
+// 	case 3000000: speed = B3000000; break;
+// #endif
 
 	default:
 		PX4_ERR("Unsupported baudrate: %d\n\tsupported examples:\n\t9600, 19200, 38400, 57600\t\n115200\n230400\n460800\n500000\n921600\n1000000\n",
@@ -1537,20 +1539,20 @@ Mavlink::configure_streams_to_default(const char *configure_single_stream)
 		// Note: streams requiring low latency come first
 		configure_stream_local("TIMESYNC", 10.0f);
 		// configure_stream_local("CAMERA_TRIGGER", unlimited_rate);
-		configure_stream_local("HIGHRES_IMU", 300.0f);
+		configure_stream_local("HIGHRES_IMU", 1000.0f);
 		configure_stream_local("LOCAL_POSITION_NED", 30.0f);
-		configure_stream_local("ATTITUDE", 100.0f);
+		configure_stream_local("ATTITUDE", 350.0f);
 		configure_stream_local("ALTITUDE", 10.0f);
 		// configure_stream_local("DISTANCE_SENSOR", 10.0f);
 		// configure_stream_local("ESC_INFO", 10.0f);
 		// configure_stream_local("ESC_STATUS", 10.0f);
-		// configure_stream_local("MOUNT_ORIENTATION", 10.0f);
+		configure_stream_local("MOUNT_ORIENTATION", 10.0f);
 		// configure_stream_local("OBSTACLE_DISTANCE", 10.0f);
-		// configure_stream_local("ODOMETRY", 30.0f);
+		configure_stream_local("ODOMETRY", 30.0f);
 
-		// configure_stream_local("ACTUATOR_CONTROL_TARGET0", 10.0f);
+		configure_stream_local("ACTUATOR_CONTROL_TARGET0", 10.0f);
 		// configure_stream_local("ADSB_VEHICLE", unlimited_rate);
-		configure_stream_local("ATTITUDE_QUATERNION", 300.0f);
+		configure_stream_local("ATTITUDE_QUATERNION", 1000.0f);
 		configure_stream_local("ATTITUDE_TARGET", 10.0f);
 		// configure_stream_local("BATTERY_STATUS", 0.5f);
 		// configure_stream_local("CAMERA_IMAGE_CAPTURED", unlimited_rate);
@@ -1571,9 +1573,9 @@ Mavlink::configure_streams_to_default(const char *configure_single_stream)
 		// configure_stream_local("NAV_CONTROLLER_OUTPUT", 10.0f);
 		// configure_stream_local("OPTICAL_FLOW_RAD", 10.0f);
 		// configure_stream_local("ORBIT_EXECUTION_STATUS", 5.0f);
-		// configure_stream_local("PING", 1.0f);
+		configure_stream_local("PING", 1.0f);
 		configure_stream_local("POSITION_TARGET_GLOBAL_INT", 10.0f);
-		// configure_stream_local("POSITION_TARGET_LOCAL_NED", 10.0f);
+		configure_stream_local("POSITION_TARGET_LOCAL_NED", 10.0f);
 		// configure_stream_local("RAW_RPM", 5.0f);
 		// configure_stream_local("RC_CHANNELS", 20.0f);
 		// configure_stream_local("SERVO_OUTPUT_RAW_0", 10.0f);
